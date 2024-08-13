@@ -1,0 +1,34 @@
+{
+    "envs": [
+        {
+            "name": "feature",
+            "stage": "DEV",
+            "domain": "dev.your-domain.com",
+            "realm_name": "provena",
+            "replacements": [
+                {
+                    "id": "feature_number",
+                    "key": "${feature_number}"
+                }
+            ],
+            "datastore_api_endpoint_override": "https://f${feature_number}-data-api.dev.your-domain.com",
+            "auth_api_endpoint_override": "https://f${feature_number}-auth-api.dev.your-domain.com",
+            "registry_api_endpoint_override": "https://f${feature_number}-registry-api.dev.your-domain.com",
+            "prov_api_endpoint_override": "https://f${feature_number}-prov-api.dev.your-domain.com",
+            "search_api_endpoint_override": "https://f${feature_number}-search.dev.your-domain.com",
+            "jobs_service_api_endpoint_override": "https://f${feature_number}-job-api.dev.your-domain.com"
+        },
+        {
+            "name": "DEV",
+            "stage": "DEV",
+            "domain": "dev.your-domain.com",
+            "realm_name": "provena"
+        },
+        {
+            "name": "PROD",
+            "stage": "PROD",
+            "domain": "your-domain.com",
+            "realm_name": "provena"
+        }
+    ]
+}

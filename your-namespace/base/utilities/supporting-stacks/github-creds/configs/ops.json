@@ -1,0 +1,7 @@
+{
+    "env": {
+        "account": "your-aws-account-id",
+        "region": "your-aws-region"
+    },
+    "github_token_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-token-arn"
+}

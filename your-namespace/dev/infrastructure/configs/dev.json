@@ -1,0 +1,150 @@
+{
+    "type": "FULL_APP",
+    "deployment": {
+        "config_id": "dev",
+        "config_source_repo_clone_string": "https://github.com/your-org/provena-config.git",
+        "config_source_name_space": "your-namespace",
+        "config_source_stage": "dev",
+        "config_repo_oauth_token_secret_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-config-repo-token",
+        "pipeline_stack_id": "DEVPipeline",
+        "deployment_stack_id": "DEV-your-stack",
+        "stage": "DEV",
+        "git_owner_org": "your-org",
+        "git_repo_name": "provena",
+        "git_branch_name": "main",
+        "git_commit_id": "${GIT_COMMIT_ID?'!!'||null}",
+        "git_commit_url": "${GIT_COMMIT_URL?'!!'||null}",
+        "git_tag_name": "${GIT_TAG_NAME?'!!'||null}",
+        "git_release_title": "${GIT_RELEASE_TITLE?'!!'||null}",
+        "git_release_url": "${GIT_RELEASE_URL?'!!'||null}",
+        "deployment_environment": {
+            "account": "your-aws-account-id",
+            "region": "your-aws-region"
+        },
+        "pipeline_environment": {
+            "account": "your-aws-account-id",
+            "region": "your-aws-region"
+        },
+        "github_token_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-token-arn",
+        "main_pipeline_trigger": "WEBHOOK",
+        "cdk_out_path": "dev_cdk.out",
+        "sentry_config": {
+            "sentry_dsn_back_end": "https://your-sentry-back-end.ingest.us.sentry.io",
+            "sentry_dsn_front_end": "https://your-sentry-front-end.ingest.us.sentry.io",
+            "monitoring_enabled": true
+        },
+        "interface_pipeline": true,
+        "quick_deploy_pipeline": true,
+        "interface_pipeline_trigger_settings": "NONE",
+        "build_badge": {
+            "build_domain": "deploy-build-badge.dev",
+            "interface_domain": "interface-build-badge.dev"
+        },
+        "ui_only_pipeline": true,
+        "ui_pipeline_trigger_settings": "NONE",
+        "email_alerts_activated": true,
+        "pipeline_alert_email": "your-alert-email@gmail.com",
+        "cross_account": false,
+        "ci_hook_pr_into_branch": true,
+        "trusted_ui_build_account_ids": null
+    },
+    "components": {
+        "networking": {},
+        "keycloak": {
+            "domain": "auth.dev",
+            "realm_name": "provena"
+        },
+        "identity_service": {
+            "handle_credentials_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-ardc-creds",
+            "domain_name": "handle.dev",
+            "ardc_service_endpoint": "https://demo.identifiers.ardc.edu.au/pids"
+        },
+        "data_store": {
+            "service_account_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-service-account-arn",
+            "oidc_service_account_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-service-account-arn",
+            "api_domain": "data-api.dev",
+            "ui_domain": "data.dev"
+        },
+        "landing_page": {
+            "ui_domain": "dev"
+        },
+        "auth_api": {
+            "api_domain": "auth-api.dev",
+            "api_service_account_secret_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-service-account-arn",
+            "access_alerts_email_address": "your-support-email@gmail.com"
+        },
+        "search": {
+            "search_service_domain": "search-service.dev",
+            "api_domain": "search.dev"
+        },
+        "entity_registry": {
+            "service_account_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-service-account-arn",
+            "api_domain": "registry-api.dev",
+            "ui_domain": "registry.dev"
+        },
+        "prov_store": {
+            "api_domain": "prov-api.dev",
+            "ui_domain": "prov.dev",
+            "neo4j_http_domain": "prov-db.dev",
+            "neo4j_bolt_domain": "prov-db-bolt.dev",
+            "neo4j_auth_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-prov-db-auth",
+            "neo4j_memory_size": 4096,
+            "neo4j_cpu_size": 1024,
+            "service_account_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-service-account-arn",
+            "neo4j_service_instance_role_arn": "arn:aws:iam::your-aws-account-id:role/your-dev-role",
+            "prov_job_dispatcher_service_role_secret_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-service-account-arn"
+        },
+        "warmer": {
+            "domain": "warmer.dev"
+        },
+        "async_jobs": {
+            "job_api_domain": "job-api.dev"
+        }
+    },
+    "tests": {
+        "test_activation": {
+            "TS_TYPE_CHECK": true,
+            "MYPY_TYPE_CHECK": true,
+            "UNIT": true,
+            "INTEGRATION": true,
+            "SYSTEM": false
+        },
+        "unit_tests": {
+            "handle_secret_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-ardc-creds"
+        },
+        "integration_tests": {
+            "keycloak_client_id": "integration-tests",
+            "integration_test_bots_creds_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-test-bot-creds"
+        }
+    },
+    "general": {
+        "email_connection_secret_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-email-creds",
+        "dockerhub_creds_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:registry.hub.docker.com-TyHEv4",
+        "storage_bucket_arn": "arn:aws:s3:::your-bucket-arn",
+        "application_root_domain": "dev.your-domain.com",
+        "documentation_base_link": "https://docs.provena.io",
+        "contact_us_link": "your-issue-collector-url",
+        "rate_limiting": {
+            "throttling_burst_limit": 20,
+            "throttling_rate_limit": 10
+        },
+        "tags": {
+            "application": "your-app",
+            "author": "your-org",
+            "stage": "DEV",
+            "branch": "main",
+            "feature_deployment": "false"
+        }
+    },
+    "dns": {
+        "root_domain": "your-domain.com",
+        "hosted_zone_name": "your-domain.com",
+        "hosted_zone_id": "your-hosted-zone-id",
+        "domain_certificate_arn": "arn:aws:acm:your-aws-region:your-aws-account-id:certificate/your-app-region-cert-arn",
+        "us_east_certificate_arn": "arn:aws:acm:us-east-1:your-aws-account-id:certificate/your-us-east-1-cert-arn"
+    },
+    "backup": {
+        "backups_enabled": true,
+        "key_admins": []
+    }
+}

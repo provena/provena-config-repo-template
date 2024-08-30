@@ -52,7 +52,11 @@
         "networking": {},
         "keycloak": {
             "domain": "auth.dev",
-            "realm_name": "provena"
+            "realm_name": "provena",
+            "keycloak_configuration": {
+                "base_url": "auth.your-base-domain.com",
+                "display_name": "Provena Authorisation Service"
+            }
         },
         "identity_service": {
             "handle_credentials_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-ardc-creds",

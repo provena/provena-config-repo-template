@@ -149,6 +149,7 @@
     },
     "backup": {
         "backups_enabled": true,
+        "vault_name" : "your-vault-name",
         "key_admins": []
     }
 }

@@ -37,8 +37,8 @@
         "quick_deploy_pipeline": true,
         "interface_pipeline_trigger_settings": "NONE",
         "build_badge": {
-            "build_domain": "deploy-build-badge.dev",
-            "interface_domain": "interface-build-badge.dev"
+            "build_domain": "deploy-build-badge",
+            "interface_domain": "interface-build-badge"
         },
         "ui_only_pipeline": true,
         "ui_pipeline_trigger_settings": "NONE",
@@ -51,7 +51,7 @@
     "components": {
         "networking": {},
         "keycloak": {
-            "domain": "auth.dev",
+            "domain": "auth",
             "realm_name": "provena",
             "keycloak_configuration": {
                 "base_url": "auth.your-base-domain.com",
@@ -60,37 +60,37 @@
         },
         "identity_service": {
             "handle_credentials_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-ardc-creds",
-            "domain_name": "handle.dev",
+            "domain_name": "handle",
             "ardc_service_endpoint": "https://demo.identifiers.ardc.edu.au/pids"
         },
         "data_store": {
             "service_account_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-service-account-arn",
             "oidc_service_account_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-service-account-arn",
-            "api_domain": "data-api.dev",
-            "ui_domain": "data.dev"
+            "api_domain": "data-api",
+            "ui_domain": "data"
         },
         "landing_page": {
             "ui_domain": "dev"
         },
         "auth_api": {
-            "api_domain": "auth-api.dev",
+            "api_domain": "auth-api",
             "api_service_account_secret_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-service-account-arn",
             "access_alerts_email_address": "your-support-email@gmail.com"
         },
         "search": {
-            "search_service_domain": "search-service.dev",
-            "api_domain": "search.dev"
+            "search_service_domain": "search-service",
+            "api_domain": "search"
         },
         "entity_registry": {
             "service_account_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-service-account-arn",
-            "api_domain": "registry-api.dev",
-            "ui_domain": "registry.dev"
+            "api_domain": "registry-api",
+            "ui_domain": "registry"
         },
         "prov_store": {
-            "api_domain": "prov-api.dev",
-            "ui_domain": "prov.dev",
-            "neo4j_http_domain": "prov-db.dev",
-            "neo4j_bolt_domain": "prov-db-bolt.dev",
+            "api_domain": "prov-api",
+            "ui_domain": "prov",
+            "neo4j_http_domain": "prov-db",
+            "neo4j_bolt_domain": "prov-db-bolt",
             "neo4j_auth_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-prov-db-auth",
             "neo4j_memory_size": 4096,
             "neo4j_cpu_size": 1024,
@@ -99,10 +99,10 @@
             "prov_job_dispatcher_service_role_secret_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-service-account-arn"
         },
         "warmer": {
-            "domain": "warmer.dev"
+            "domain": "warmer"
         },
         "async_jobs": {
-            "job_api_domain": "job-api.dev"
+            "job_api_domain": "job-api"
         }
     },
     "tests": {

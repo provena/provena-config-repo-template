@@ -141,7 +141,7 @@
         }
     },
     "dns": {
-        "root_domain": "your-domain.com",
+        "root_domain": "dev.your-domain.com",
         "hosted_zone_name": "your-domain.com",
         "hosted_zone_id": "your-hosted-zone-id",
         "domain_certificate_arn": "arn:aws:acm:your-aws-region:your-aws-account-id:certificate/your-app-region-cert-arn",

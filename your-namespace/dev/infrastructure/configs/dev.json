@@ -70,7 +70,7 @@
             "ui_domain": "data"
         },
         "landing_page": {
-            "ui_domain": "dev"
+            "ui_domain": ""
         },
         "auth_api": {
             "api_domain": "auth-api",

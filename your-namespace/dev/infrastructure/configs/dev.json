@@ -29,9 +29,7 @@
         "main_pipeline_trigger": "WEBHOOK",
         "cdk_out_path": "dev_cdk.out",
         "sentry_config": {
-            "sentry_dsn_back_end": "https://your-sentry-back-end.ingest.us.sentry.io",
-            "sentry_dsn_front_end": "https://your-sentry-front-end.ingest.us.sentry.io",
-            "monitoring_enabled": true
+            "monitoring_enabled": false
         },
         "interface_pipeline": true,
         "quick_deploy_pipeline": true,
@@ -149,7 +147,7 @@
     },
     "backup": {
         "backups_enabled": true,
-        "vault_name" : "your-vault-name",
+        "vault_name": "your-vault-name",
         "key_admins": []
     }
 }

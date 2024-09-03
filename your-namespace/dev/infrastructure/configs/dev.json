@@ -123,7 +123,7 @@
         "email_connection_secret_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-email-creds",
         "dockerhub_creds_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-docker-creds-secret-arn",
         "storage_bucket_arn": "arn:aws:s3:::your-bucket-arn",
-        "application_root_domain": "dev.your-domain.com",
+        "root_domain": "dev.your-domain.com",
         "documentation_base_link": "https://docs.provena.io",
         "contact_us_link": "your-issue-collector-url",
         "rate_limiting": {
@@ -139,7 +139,6 @@
         }
     },
     "dns": {
-        "root_domain": "dev.your-domain.com",
         "hosted_zone_name": "your-domain.com",
         "hosted_zone_id": "your-hosted-zone-id",
         "domain_certificate_arn": "arn:aws:acm:your-aws-region:your-aws-account-id:certificate/your-app-region-cert-arn",

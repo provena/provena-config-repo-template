@@ -1,10 +1,14 @@
 {
     "type": "UI_ONLY",
-    "config_id": "feat-ui",
-    "config_source_repo_clone_string": "https://github.com/your-org/provena-config.git",
-    "config_source_name_space": "your-namespace",
-    "config_source_stage": "feat",
-    "config_repo_oauth_token_secret_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-config-repo-token",
+    "stage": "DEV",
+    "config": {
+        "config_file_name": "feat-ui",
+        "repo_clone_string": "https://github.com/your-org/provena-config.git",
+        "namespace": "your-namespace",
+        "stage": "feat",
+        "oauth_token_secret_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-config-repo-token",
+        "branch": "main"
+    },
     "pipeline_stack_id": "f${TICKET_NUMBER}Pipeline",
     "deployment_stack_id": "f${TICKET_NUMBER}-your-stack",
     "github_token_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-token-arn",
@@ -21,7 +25,6 @@
         "account": "your-aws-account-id",
         "region": "your-aws-region"
     },
-    "target_stage": "DEV",
     "domains": {
         "root_domain": "your-domain.com",
         "landing_page_sub_domain": "f${TICKET_NUMBER}.dev",

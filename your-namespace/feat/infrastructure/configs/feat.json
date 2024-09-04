@@ -1,14 +1,17 @@
 {
     "type": "FULL_APP",
+    "stage": "DEV",
     "deployment": {
-        "config_id": "feat",
-        "config_source_repo_clone_string": "https://github.com/your-org/provena-config.git",
-        "config_source_name_space": "your-namespace",
-        "config_source_stage": "feat",
-        "config_repo_oauth_token_secret_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-config-repo-token",
+        "config": {
+            "config_file_name": "feat",
+            "repo_clone_string": "https://github.com/your-org/provena-config.git",
+            "namespace": "your-namespace",
+            "stage": "feat",
+            "oauth_token_secret_arn": "arn:aws:secretsmanager:your-aws-region:your-aws-account-id:secret:your-config-repo-token",
+            "branch": "main"
+        },
         "pipeline_stack_id": "f${TICKET_NUMBER}Pipeline",
         "deployment_stack_id": "f${TICKET_NUMBER}-your-stack",
-        "stage": "DEV",
         "git_owner_org": "provena",
         "git_repo_name": "provena",
         "git_branch_name": "${BRANCH_NAME}",
